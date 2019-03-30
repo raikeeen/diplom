@@ -33,6 +33,8 @@
     </div>
 </nav>
 
+
+
 <main role="main">
     <div class="container">
     @yield('title')
