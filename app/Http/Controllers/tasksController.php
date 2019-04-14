@@ -12,4 +12,9 @@ class tasksController extends Controller
         //return view('welcome', ['news' => $news]);
         return view('tasks.tasks');
     }
+    public function detail()
+    {
+
+        return view('tasks.detail');
+    }
 }

@@ -15,13 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/news', 'newsController@index')->name('news');
-Route::get('/detail', 'newsController@detail')->name('detail');
+Route::get('/news/detail', 'newsController@detail')->name('detail');
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/tasks', 'tasksController@index')->name('tasks');
+Route::get('/tasks/detail', 'tasksController@detail')->name('tasks1');
+
 
 
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {

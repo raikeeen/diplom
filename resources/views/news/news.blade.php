@@ -1,8 +1,8 @@
 @extends('layouts.front')
 @section('title')
-
     <div class="container">
-    <div style="margin-top: 60px"></div>
+        <!--<div style="margin-top: 60px"></div>-->
+
         <div class="row">
             <div class="col-md-9">
                 <h1 class="my-4">Новости</h1>
@@ -26,7 +26,7 @@
                 <div class="col-md-5">
                     <h3>Название темы</h3>
                     <p>аывафыв афывафы вафы вафыва ыфва фыва ыфва фывафыва ыфваыфваыф ваыфваыфва ыфваыф ваыфв ыфва фываф ыва фыва фываыф ваыфваыфва ыфваыфва</p>
-                    <a class="btn btn-primary" href="{{ url('/detail') }}">Читать</a>
+                    <a class="btn btn-primary" href="{{route('detail')}}">Читать</a>
 
                 </div>
             </div>
@@ -62,9 +62,8 @@
 
             </div>
         </div>
-        <p>время добавлениея </p>
 
-        <hr>
+
 
     <!--<ul class="pagination justify-content-center">
         <li class="page-item">

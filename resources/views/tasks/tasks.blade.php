@@ -46,6 +46,7 @@
 </style>
 @extends('layouts.front')
 @section('title')
+    <!--
 <div class="container" >
     <div class="row">
         <div class="col-md-8" style="background-color: #ffffff;">
@@ -59,10 +60,64 @@
                 </div>
             </div>
             <hr>
--->
+
 
         </div>
 
 
 </div>
+-->
+    <div class="container" style="padding-top: 30px;padding-bottom: 30px">
+        <div class="row">
+            <div class="col-md-8" style="background-color: #ffffff;margin-right: 5px;">
+                <header>
+                    <h5>Заказы (1322)</h5>
+                    <hr>
+                    <div class="md-form mt-0">
+                        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                    </div>
+                    <hr>
+                </header>
+                <div>
+                    <h5><a href="{{route('tasks1')}}">Ищем парт-тайм Ruby разработчика для доработок API на нашей платформе</a></h5>
+                    <h6>2 отклика  22 просмотра  33 минуты назад</h6>
+                    <br>
+                    <hr>
+                </div>
+                <div>
+                    <h5><a href="{{route('tasks1')}}">Ищем парт-тайм Ruby разработчика для доработок API на нашей платформе</a></h5>
+                    <h6>2 отклика  22 просмотра  33 минуты назад</h6>
+                    <br>
+                    <hr>
+                </div>
+                <div>
+                    <h5><a href="{{route('tasks1')}}">Ищем парт-тайм Ruby разработчика для доработок API на нашей платформе</a></h5>
+                    <h6>2 отклика  22 просмотра  33 минуты назад</h6>
+                    <br>
+                    <hr>
+                </div>
+                <div>
+                    <h5><a href="{{route('tasks1')}}">Ищем парт-тайм Ruby разработчика для доработок API на нашей платформе</a></h5>
+                    <h6>2 отклика  22 просмотра  33 минуты назад</h6>
+                    <br>
+                    <hr>
+                </div>
+
+
+
+            </div>
+            <!--<div class="col-md-1" style="background-color: #EEEEEE;"></div>-->
+            <div class="col-md-3" style="background-color: #ffffff; margin-left: 50px;">
+                <div class="row backgroundImage">
+                    <div class="col-sm-12 text-center">
+                        <h5>Дополнительно</h5>
+                       <hr>
+                    </div>
+                    <hr>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
 @endsection

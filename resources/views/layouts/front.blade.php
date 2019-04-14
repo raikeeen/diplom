@@ -128,7 +128,7 @@
         @auth
         <header id="header" class="sticky_header" style="background-color: #6351ce; margin-top: 70px;">
          <div class="container">
-             <span class="col-lg-1"><a class="navbar-brand text-white" href="{{ url('/tasks') }}">Заказы </a></span>
+             <span class="col-lg-1"><a class="navbar-brand text-white" href="{{ route('tasks') }}">Заказы </a></span>
              <span class="col-lg-1"><a class="navbar-brand text-white" href="">Выполненные </a></span>
              <span class="col-lg-1"><a class="navbar-brand text-white" href="">Отклоненные  </a></span>
          </div></header>
