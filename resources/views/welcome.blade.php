@@ -139,7 +139,7 @@
         <hr>
         <div class="row mb-4" >
             <div class="col-md-8">
-                <div class="card mb-8 box-shadow">
+                <div class="card mb-8 box-shadow" style="padding-bottom: 10%;">
                     <img class="card-img-top" src="{{asset('/images/image.jpg')}}" alt="Card image cap">
                     <div class="card-body card-header-tabs">
                         <h3>Главная новость</h3>
