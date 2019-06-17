@@ -17,8 +17,8 @@ class CreateUsersTable extends Migration
             $table->increments('id')->unsigned();
             $table->string('name');
             $table->string('email')->unique();
-            $table->longText('avatar');
-            $table->string('contact');
+            $table->longText('avatar')->nullable();
+            $table->string('contact')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('idReviews')->unsigned();
