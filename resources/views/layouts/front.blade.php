@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei" rel="stylesheet">
     <link href="{{asset('css/header.css')}}" rel="stylesheet">
     <link href="{{asset('css/socialIcons.css')}}" rel="stylesheet">
+    <link href="{{asset('css/addTask.css')}}" rel="stylesheet">
+
 
 
 </head>
@@ -86,6 +88,9 @@
                         <a class="nav-link disabled" href="#">Disabled</a>
                     </li>-->
                 </ul>
+                <div class="plusObvodka" style="width: 30px;height: 30px;">
+                    <a href="123454" class="plus" style="color: #ffffff;">+</a>
+                </div>
                 <!--<form class="form-inline mt-2 mt-md-0">
                     <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
@@ -264,12 +269,7 @@
                     </p>
 
                 </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
                 <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-
-                    <!-- Links -->
                     <h6 class="text-uppercase font-weight-bold">Услуги</h6>
                     <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;background-color: #6351ce;">
                     <p>
@@ -284,38 +284,20 @@
                     <p>
                         <a href="#!">FAQ</a>
                     </p>
-
                 </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-
-                    <!-- Links -->
                     <h6 class="text-uppercase font-weight-bold">Контакты </h6>
                     <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;background-color: #6351ce;">
                     <p>Оренбург, 460021, RU</p>
                     <p>anonim@buys.ru</p>
                     <p>+7(3532)11-11-11</p>
                 </div>
-                <!-- Grid column -->
-
             </div>
-            <!-- Grid row -->
-
         </div>
         </div>
-        <!-- Footer Links -->
-
-        <!-- Copyright -->
         <div class="footer-copyright text-center py-3 text-white"   style="background-color: #161e2e;">© 2019 Skrobov
         </div>
-        <!-- Copyright -->
-
     </footer>
-
-
-
     <script src="{{asset('js/jquery-3.3.1.slim.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.bundle.js')}}"></script>
     <script src="{{asset('js/bootstrap.js')}}"></script>

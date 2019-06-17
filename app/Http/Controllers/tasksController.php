@@ -17,4 +17,9 @@ class tasksController extends Controller
 
         return view('tasks.detail');
     }
+    public function add()
+    {
+
+        return view('tasks.add');
+    }
 }

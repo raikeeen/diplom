@@ -1,0 +1,47 @@
+.container{
+
+}
+.layoutTitle{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    color: #4f6173;
+    font-weight: 700;
+    font-size: 17px;
+}
+.categoryGroup{
+    padding: 20px 15px;
+}
+.categoryGroupFolder{
+    margin-bottom: 0px;
+    display: block;
+    cursor: pointer;
+}
+.categoryGroupName{
+
+}
+.checkboxPseudo{
+    position: relative;
+    display: inline-block;
+    margin-right: 5px;
+    width: 19px;
+    height: 19px;
+    border-radius: 3px;
+    background-color: #d7dcde;
+    vertical-align: middle;
+
+}
+
+.linkDotted{
+    border-bottom: 1px dotted;
+    color: #58697a;
+    text-decoration: none;
+    cursor: pointer;
+}
+.adWords{
+    font-family: "PT Sans", Arial, Tahoma, sans-serif;
+}
+.taskTitle{
+    color: #4f6173;
+    font-size: 21px;
+}

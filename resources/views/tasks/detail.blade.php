@@ -1,47 +1,148 @@
+<link rel="stylesheet" href="{{asset('css/search.css')}}">
+<link rel="stylesheet" href="{{asset('css/listTaskAndInfo.css')}}">
 @extends('layouts.front')
 @section('title')
-    <div class="container" style="padding-top: 30px;padding-bottom: 30px">
+    <div class="container containerTask">
         <div class="row">
-            <div class="col-md-8" style="background-color: #ffffff;margin-right: 5px;">
-                <header>
-                    <h3>Ищем парт-тайм Ruby разработчика для доработок API на нашей платформе</h3>
-                    <p>
-                        800 руб.за час • безналичный расчёт, электронные деньги
-                        14 апреля 2019, 19:42 • 1 отклик • 14 просмотров
-                    </p>
-                    <hr>
-                </header>
-                <div>
-                    <h6>
-                        Ищем Ruby-разработчика чтобы развернуть готовый бекенд на сервере(все работает на другом сервере, нужен дубликат), а также доработок функционала. Grape, Redis, Postgres
-                        Идеально, если со знанием Typescript
-                    </h6>
-                </div>
-                <hr>
-                <br>
-                <button type="button" class="btn btn-secondary btn-lg btn-block">Подать заявку</button>
+            <div class="col-md-8 bigList" style="padding-left: 0px;padding-right: 0px; margin-left: 25px;">
+                <div class="row" style="    position: relative;box-sizing: border-box;padding: 25px 75px 25px 20px;">
+                    <div class="col-md-12 taskDetailTitle">
+                        Ищем парт-тайм Ruby разработчика для доработок API на нашей платформе
+                    </div>
+                    <div class="col-md-12 taskFinance">
+                        10 000 руб. за выполнение<br>
+                    </div>
+                    <div class="col-md-12 taskTags">
+                        16 июня 2019, 09:46 • 0 откликов • 6 просмотров<br>
+                    </div>
+                    <div class="col-md-12 taskDescription">
+                        У нас есть сайт. На сайте есть бонусы и акции, турниры и тд.
+                        Потенциальным клиентам периодически проходит рассылка.
+                        Нужно придумать бонусы и акции, турниры и лотереи, на базе тех возможностей которые у нас есть (т.е. на базе того, с чем мы работаем)
 
-            </div>
-            <!--<div class="col-md-1" style="background-color: #EEEEEE;"></div>-->
-            <div class="col-md-3" style="background-color: #ffffff; margin-left: 50px;">
-                <div class="row backgroundImage">
-                    <div class="col-sm-12 text-center">
-                        <div class="mainImage">
-                            <img src="{{asset('images/image.jpg')}}" class="rounded-circle d-block mx-auto mb-4" width="100px" height="100px" alt="...">
+                        Мы предоставим список бонусов и акций, которые мы можем сделать, а Ваша задача придумать их на базе того, что у нас есть.
+
+                        С какой периодичностью делать рассылку клиентам, чтобы стимулировать их совершить "покупку".
+                        Т.е. придумать воронку продаж, которая будет стимулировать наших клиентов совершить покупку.
+
+                        Тематика гемблинг.
+
+                        Мы используем емейл рассылку.
+
+                        Если у Вас остались вопросы, пожалуйста задавайте.
+                        Бюджет по договорённости.
+                    </div>
+
+                </div>
+                <div class="userBlockInfo">
+                    <div class="userBlockInfoTitle" >
+                        Ваш отклик на заказ
+                    </div>
+                </div>
+                <form style="padding: 20px;">
+                    <div class="userForm">
+                        <div class="avatar">
+                            <img class="avatario" src="http://localhost/diplom/public/images/avatar.png" style="width: 50px; height: 50px; border: 0px">
                         </div>
-                        <div id="Оценки" onmouseout="Выбрать_звёздочку(-1);"></div>
-                        <h5>Vitalya Rekun</h5>
-                        <h6>Moscow, Russia</h6>
-                        <h6>Размещенные заказы</h6>
-                        <hr>
-                        Заказчик
+                        <div>
+                            <textarea class="form-control" rows="5" data-role="oembed-input" data-target="#oembed-preview" data-maxlength="3000" name="task_comment[body]" id="task_comment_body" style="overflow: hidden; overflow-wrap: break-word; resize: none; width: 550px; height: 127px;"></textarea>
+                            <div style="margin-top: 10px; margin-left: 75px">
+                                <button type="button" class="btn btn-secondary">Откликнуться</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-3 smallList">
+                <div class="row backgroundImage">
+                    <div class="col-sm-12 rightList">
+                        <div class="row avatarTaskRightBlock">
+                            <div class="col-md-12">
+                                <a href="12312">
+                                    <img class="avatario" src="http://localhost/diplom/public/images/avatar.png" style="margin: auto;
+    width: 90px; border: 0px">
+
+                                    <div class="fullName">
+                                        Edvard SDD
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="userRole">
+                            <div class="userRoleName">
+                                Компания
+                            </div>
+                        </div>
+                        <div class="title">Статистика</div>
+                        <div class="rowDev">
+                            <div style="    width: 100%;font-weight: bold;">Статистика компании</div>
+                        </div>
+                        <div class="rightTextListSmall">
+                            <div class="row">
+                                <div class="label">
+                                    Завершенные заказы
+                                </div>
+                                <div class="value" style="    width: 40.6%;">
+                                    <a href="123">9</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label">
+                                    В поиске исполнителя
+                                </div>
+                                <div class="value" style="width: 39.2%;">
+                                    <a href="123">1</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label">
+                                    Заказы в арбитраже
+                                </div>
+                                <div class="value" style="width: 43.2%;">
+                                    0
+                                </div>
+                            </div>
+                            <div class="row" style="margin-bottom: 16px;">
+                                <div class="label">
+                                    Отзывы исполнителей
+                                </div>
+                                <div class="value" style="width: 38.5%;">
+                                    <a href="123">+9</a>
+                                    /
+                                    <a href="123">-0</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label">
+                                    Зарегистрирован
+                                </div>
+                                <div class="value" style="width: 50%;">
+                                    1 год назад
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="label">
+                                    Был последний раз
+                                </div>
+                                <div class="value" style="width: 45%;">
+                                    сегодня
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="title">Верификация</div>
+                            <p class="rightTextListSmall" style="white-space: pre-wrap;">Пользователь верифицирован по номеру телефона</p>
+                            <hr>
+                            <div class="title">Контакты</div>
+                            <p class="rightTextListSmall" style="white-space: pre-wrap;">Этот пользователь не указал никаких контактов.</p>
+
+                        </div>
                         <hr>
                     </div>
-                    <hr>
+
                 </div>
-
             </div>
-        </div>
 
+        </div>
     </div>
 @endsection

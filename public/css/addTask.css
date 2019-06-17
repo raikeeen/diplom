@@ -1,0 +1,72 @@
+.plus{
+    width: 32px;
+    height: 32px;
+    line-height: 26px;
+    padding: 10px;
+    font-size: 20px;
+    color: #999999;
+    font-weight: bold;
+}
+.plusObvodka{
+    border: 1px solid #E0E6EA;
+    border-radius: 50%;
+}
+.pageTitle{
+    border-bottom: 1px solid #ededed;
+    margin: 0 20px;
+    line-height: 50px;
+    padding: 0px 0 0;
+    font-size: 17px;
+    font-weight: bold;
+    color: #4f6173;
+    font-family: "PT Sans", Arial, Tahoma, sans-serif;
+}
+.formFields{
+    margin: 0;
+    padding: 20px;
+    list-style: none;
+    padding-bottom: 0px;
+}
+.formFieldsGroup{
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 485px;
+}
+.title{
+    display: inline-block;
+    margin-bottom: 5px;
+    color: #5d6577;
+    font-weight: bold;
+}
+.field{
+    width: 143%;
+    border-radius: 4px;
+    background-color: #e0e6e7;
+    color: #48525b;
+    vertical-align: middle;
+    font-size: 14px;
+}
+.fieldPostfix{
+    display: inline-block;
+    box-sizing: border-box;
+    margin-left: -4px;
+    padding: 10px;
+    height: 38px;
+    border-left: 1px dashed #858c92;
+    border-radius: 0 5px 5px 0;
+    background-color: #e0e6e7;
+    color: #858c92;
+    vertical-align: top;
+}
+.fieldHelp{
+    display: inline-block;
+    box-sizing: border-box;
+    padding-right: 30px;
+    width: 143%;
+    color: #a5adb5;
+    font-weight: normal;
+    font-size: 13px;
+    margin-bottom: 10px;
+}

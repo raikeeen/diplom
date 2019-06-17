@@ -22,7 +22,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/tasks', 'tasksController@index')->name('tasks');
+Route::get('/employer', 'employerController@index')->name('employer');
 Route::get('/tasks/detail', 'tasksController@detail')->name('tasks1');
+Route::get('/tasks/add', 'tasksController@add')->name('add');
+
 
 
 

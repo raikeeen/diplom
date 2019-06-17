@@ -1,0 +1,239 @@
+.containerTask{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.bigList{
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin-right: 15px;
+    padding-right: 30px;
+    box-shadow: 0px 3px 5px 0 rgba(174,174,174,0.5);
+}
+.smallList{
+    background-color: #ffffff;
+    border-radius: 5px;
+    height: 50%;
+    word-wrap: break-word;
+    box-shadow: 0px 3px 5px 0 rgba(174,174,174,0.5);
+}
+.rightList{
+    font-size: 15px;
+    color: #506172;
+    font-weight: bold;
+    margin-bottom: 7px;
+    font-family: "PT Sans", Arial, Tahoma, sans-serif;
+
+}
+.rightTextListSmall{
+    font-size: 14px;
+    white-space: nowrap;
+    color: #5d6577;
+    min-height: 100%;
+    height: auto;
+    font-weight: 400;
+    font-family: "PT Sans", Arial, Tahoma, sans-serif;
+    line-height: 1.5em;
+}
+.title{
+    font-size: 15px;
+    color: #506172;
+    font-weight: bold;
+    margin-bottom: 7px;
+    font-family: "PT Sans", Arial, Tahoma, sans-serif;
+}
+.value{
+    width: 40%;
+    display: inline-block;
+    text-align: right;
+    font-weight: bold;
+}
+.userProfileHeader{
+    position: relative;
+    width: 100%;
+    height: 210px;
+}
+.ProfileHeaderImg{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+.bannerImg{
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.userProfileBannerInfo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -55px 0 0 -50%;
+    width: 100%;
+    height: 110px;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+.avatar{
+    float: left;
+    margin-right: 25px;
+    border-radius: 50%;
+    background: #6351ce;
+    position: relative;
+}
+.avatario{
+    display: block;
+    box-sizing: border-box;
+    width: 85px;
+    border: 4px solid #6351ce;
+    border-radius: 50%;
+    background: #6351ce;
+    overflow: hidden;
+}
+.userName{
+    margin-bottom: 0;
+    color: #fff;
+    text-shadow: 1px 2px 1px rgba(0,0,0,0.4);
+    font-weight: 700;
+    font-size: 26px;
+}
+.userProf{
+    color: #fff;
+    font-weight: normal;
+    font-size: 15px;
+}
+.userMeta{
+    color: #fff;
+    font-weight: normal;
+    font-size: 15px;
+}
+.userInfo{
+
+}
+.userBlockInfo{
+    margin: 0;
+}
+.rowDev{
+    margin-top: 20px;
+    font-size: 14px;
+}
+.label{
+    padding-left: 15px;
+}
+.userBlockInfoTitle{
+    position: relative;
+    padding: 10px 25px;
+    background-color: #6351ce;
+    color: #fff;
+    font-weight: 700;
+    font-size: 17px;
+}
+.userBlockInfoContent{
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 20px;
+}
+.emptyBlockHolder{
+    position: relative;
+    min-height: 350px;
+}
+.emptyBlockRecommendations{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -70px 0 0 -180px;
+    width: 360px;
+    height: 140px;
+}
+.emptyBlockTitle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -180px;
+    width: 360px;
+    height: 200px;
+    color: #b8c7ca;
+    text-align: center;
+}
+.emptyBlockTitleRec{
+    color: #4f6173;
+    font-size: 21px;
+
+}
+.userForm{
+    box-sizing: border-box;
+    padding-right: 50px;
+}
+.form-control{
+    display: block;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #e0e6e7;
+    box-shadow: none;
+    color: #48525b;
+    vertical-align: middle;
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-transition: all ease-in-out .15s;
+    transition: all ease-in-out .15s;
+}
+.userBlockInfoOptions{
+
+}
+.taskDetail{
+    position: relative;
+    box-sizing: border-box;
+    padding: 25px 75px 25px 20px;
+
+}
+.taskDetailTitle{
+    font-family: "PT Sans", Arial, Tahoma, sans-serif;
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 1.5em;
+    color: #4f6173;
+}
+.taskTags{
+    margin-top: 5px;
+    font-size: 15px;
+    color: #aeb8bc;
+}
+.taskFinance{
+    font-weight: bold;
+    color: #5fbfb4;
+}
+.taskDescription{
+    overflow: hidden;
+    margin: 20px 0 0;
+    color: #5d6577;
+}
+.avatarTaskRightBlock{
+    text-align: center;
+    padding: 15px 0;
+}
+.fullName{
+    margin: 10px 0 0;
+    font-size: 21px;
+    font-weight: bold;
+    color: #4f6173;
+}
+.userRole{
+    text-align: center;
+    padding: 15px 0 20px;
+    padding-top: 0px;
+}
+.userRoleName{
+    font-size: 15px;
+    font-weight: bold;
+    color: #aeb8bc;
+    border-bottom: 1px solid #eceeef;
+}
