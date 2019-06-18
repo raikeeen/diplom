@@ -1,9 +1,10 @@
+<link rel="stylesheet" href="{{asset('css/listTaskAndInfo.css')}}">
+<link rel="stylesheet" href="{{asset('css/taskAll.css')}}">
 @extends('layouts.front')
 @section('title')
 
 
-    <main role="main" class="container">
-        <div style="margin-top: 60px"></div>
+    <main role="main" class="container" style="padding-top: 90px">
         <div class="row">
             <div class="col-md-8 blog-main">
                 <div class="blog-post">

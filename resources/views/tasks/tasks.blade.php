@@ -16,7 +16,7 @@
 </style>
 @extends('layouts.front')
 @section('title')
-    <div class="container containerTask adWords">
+    <div class="container containerTask adWords" style="padding-top: 90px">
         <div class="row">
             <div class="col-md-8 bigList" style="margin-left: 25px;">
                 <header>

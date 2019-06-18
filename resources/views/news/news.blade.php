@@ -1,7 +1,6 @@
 @extends('layouts.front')
 @section('title')
-    <div class="container">
-        <div style="margin-top: 60px"></div>
+    <div class="container" style="padding-top: 90px">
 
         <div class="row">
             <div class="col-md-9">

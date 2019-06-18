@@ -1,5 +1,7 @@
 <link href="{{asset('css/devNews.css')}}" rel="stylesheet">
 <link href="{{asset('css/timeLine.css')}}" rel="stylesheet">
+<<link href="{{asset('css/slider.css')}}" rel="stylesheet">
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -8,7 +10,7 @@
 @endsection
 @section('content')
 
-
+    <div style="margin-top: -22px;"></div>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -17,13 +19,28 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="d-block w-100 h-50" src="{{asset('/images/image.jpg')}}" alt="First slide">
+                <img class="d-block slides" src="{{asset('/images/slider1.jpg')}}" alt="First slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 style="font-weight: bold; margin-bottom: 8%">- Стань Тайным покупателем -</h2>
+                    <h5 style="font-style: italic;margin-bottom: 6%">Будь на страже уровня сервиса своего города</h5>
+                    <a class="navbar-brand text-white btn btn-outline-primary" style="padding: 15px 29px;     font-size: 15px; margin-left: 16px" href="{{ route('register') }}">Присоединиться</a></span>
+                </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100 h-50" src="{{asset('/images/image.jpg')}}" alt="Second slide">
+                <img class="d-block slides" src="{{asset('/images/slider2.jpg')}}" alt="Second slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 style="font-weight: bold; margin-bottom: 8%">- Обширная география работы-</h2>
+                    <h5 style="font-style: italic;margin-bottom: 6%">Работает во всех уголках нашей страны</h5>
+                    <a class="navbar-brand text-white btn btn-outline-primary" style="padding: 15px 29px;     font-size: 15px; margin-left: 16px" href="{{ route('register') }}">Присоединиться</a></span>
+                </div>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100 h-50" src="{{asset('/images/image.jpg')}}" alt="Third slide">
+                <img class="d-block slides" src="{{asset('/images/slider3.jpg')}}" alt="Third slide">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 style="font-weight: bold; margin-bottom: 8%">- Оцените уровень сервиса -</h2>
+                    <h5 style="font-style: italic;margin-bottom: 6%">Как обслуживают ваших клиентов - взгляните на процесс их глазами</h5>
+                    <a class="navbar-brand text-white btn btn-outline-primary" style="padding: 15px 29px;     font-size: 15px; margin-left: 16px" href="{{ route('register') }}">Присоединиться</a></span>
+                </div>
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -34,6 +51,7 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
+
     </div>
 
     <div class="container row-flex">
@@ -44,12 +62,13 @@
                 <li>
                     <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
                     <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4 class="timeline-title">Bootstrap Panel Timeline</h4>
-                            <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 15:58 28.04.2017</small></p>
+                        <div class="timeline-heading" >
+                            <h4 class="timeline-title">Стань Тайным Покупателем!</h4>
                         </div>
                         <div class="timeline-body">
-                            <p>Pra lГЎ , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. MГ© faiz elementum girarzis, nisi eros vermeio, in elementis mГ© pra quem Г© amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                            <p>Тайный покупатель - это особый специалист, который совершает походы в магазины, рестораны, банки и автосалоны, под видом обычного покупателя для оценки качества работы персонала.
+                                Оцените качество обслуживания клиентов в ваших сервисных и торговых точках</p>
+                            <hr>
                         </div>
                     </div>
                 </li>
@@ -57,10 +76,11 @@
                     <div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4 class="timeline-title">Bootstrap Glyphicon Icons</h4>
+                            <h4 class="timeline-title">Широкая география</h4>
                         </div>
                         <div class="timeline-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                            <p>Помощь в проведении маркетинговых исследований в разных уголках страны</p>
+                            <hr>
                         </div>
                     </div>
                 </li>
@@ -68,54 +88,11 @@
                     <div class="timeline-badge danger"><i class="glyphicon glyphicon-credit-card"></i></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4 class="timeline-title">Line left and Right</h4>
+                            <h4 class="timeline-title">Веб-сервис</h4>
                         </div>
                         <div class="timeline-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-                        </div>
-                    </div>
-                </li>
-                <li class="timeline-inverted">
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4 class="timeline-title">Lorem ipsum dolor sit amet</h4>
-                        </div>
-                        <div class="timeline-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="timeline-badge info"><i class="glyphicon glyphicon-floppy-disk"></i></div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4 class="timeline-title">Lorem ipsum dolor sit amet</h4>
-                        </div>
-                        <div class="timeline-body">
-                            <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lГЎ , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. MГ© faiz elementum girarzis, nisi eros vermeio, in elementis mГ© pra quem Г© amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                            <p>Возможность полностью контролировать ход исследования и получать результаты в режиме online</p>
                             <hr>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown">
-                                    <i class="glyphicon glyphicon-cog"></i> <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action 1</a></li>
-                                    <li><a href="#">Action 2</a></li>
-                                    <li><a href="#">Action 3</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Action 4</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4 class="timeline-title">Lorem ipsum dolor sit amet</h4>
-                        </div>
-                        <div class="timeline-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
                         </div>
                     </div>
                 </li>
@@ -123,10 +100,23 @@
                     <div class="timeline-badge success"><i class="glyphicon glyphicon-thumbs-up"></i></div>
                     <div class="timeline-panel">
                         <div class="timeline-heading">
-                            <h4 class="timeline-title">Lorem ipsum dolor sit amet</h4>
+                            <h4 class="timeline-title">Прогрессирующая база проверяющих</h4>
                         </div>
                         <div class="timeline-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                            <p>С каждым днем растущая база проверяющих</p>
+                            <hr>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-badge info"><i class="glyphicon glyphicon-floppy-disk"></i></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">Круглосуточный мониторинг работы</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>Мы внимательно следим за состоянием ресурса, если у вас появляются вопросы вы всегда можете задать их модератору</p>
+                            <hr>
                         </div>
                     </div>
                 </li>
