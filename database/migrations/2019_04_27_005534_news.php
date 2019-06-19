@@ -18,7 +18,6 @@ class News extends Migration
             $table->string('name')->unique();
             $table->string('images');
             $table->longText('about');
-            $table->date('data');
             $table->timestamps();
         });
     }

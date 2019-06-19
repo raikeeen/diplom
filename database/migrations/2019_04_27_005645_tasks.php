@@ -21,6 +21,7 @@ class Tasks extends Migration
             $table->integer('userid');
             $table->longText('about');
             $table->date('data');
+            $table->string('fulfilment')->default('open');
 
             $table->integer('idTowns')->unsigned();
             $table->foreign('idTowns')->references('id')->on('towns');

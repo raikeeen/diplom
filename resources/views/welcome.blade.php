@@ -124,21 +124,21 @@
 
         </div><!-- ./row -->
 
-
+        @if(count($news)>=6)
         <h3>Последние новости</h3>
         <hr>
         <div class="row mb-4" >
             <div class="col-md-8">
-                <div class="card mb-8 box-shadow" style="padding-bottom: 10%;">
-                    <img class="card-img-top" src="{{asset('/images/image.jpg')}}" alt="Card image cap">
+                <div class="card mb-8 box-shadow" style="">
+                    <img class="card-img-top" src="{{url('storage/'.$news[0]->images)}}" style="max-width: 730px; max-height: 500px;" alt="Card image cap">
                     <div class="card-body card-header-tabs">
-                        <h3>Главная новость</h3>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <h3>{{$news[0]->name}}</h3>
+                        <p class="card-text">{{ str_limit($news[0]->about, 350)}}</p>
                         <div class="row">
                         <div class="col-md-10">
                             <a href="#">Читать сейчас</a>
                         </div>
-                        <div class="col-md-2">20.10.2019</div>
+                        <div class="col-md-2">{{$news[0]->created_at}}</div>
                         </div>
                     </div>
                 </div>
@@ -147,18 +147,18 @@
                 <div class="row">
                     <div class="col-md-12 mb-4">
                         <div class="card mb-12 box-shadow">
-                            <img class="card-img-top" src="{{asset('/images/image.jpg')}}" alt="Card image cap">
+                            <img class="card-img-top" src="{{url('storage/'.$news[1]->images)}}" style="max-width: 350px; max-height: 198px;" alt="Card image cap">
                             <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <a href="123"><p class="card-text">{{ str_limit($news[1]->about, 200)}}</p></a>
                             </div>
                         </div>
 
                     </div>
                     <div class="col-md-12">
                         <div class="card mb-12 box-shadow">
-                            <img class="card-img-top" src="{{asset('/images/image.jpg')}}" alt="Card image cap">
+                            <img class="card-img-top" src="{{url('storage/'.$news[2]->images)}}" style="max-width: 350px; max-height: 198px;" alt="Card image cap">
                             <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <a href="123"><p class="card-text">{{ str_limit($news[2]->about, 200)}}</p></a>
                             </div>
                         </div>
 
@@ -169,33 +169,33 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="card mb-4 box-shadow">
-                    <img class="card-img-top" src="{{asset('/images/image.jpg')}}" alt="Card image cap">
+                    <img class="card-img-top" src="{{url('storage/'.$news[3]->images)}}" style="max-width: 350px; max-height: 198px;" alt="Card image cap">
                     <div class="card-body">
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <a href="123"><p class="card-text">{{ str_limit($news[3]->about, 200)}}</p></a>
                     </div>
                 </div>
             </div>
 
                 <div class="col-md-4">
                     <div class="card mb-4 box-shadow">
-                        <img class="card-img-top" src="{{asset('/images/image.jpg')}}" alt="Card image cap">
+                        <img class="card-img-top" src="{{url('storage/'.$news[4]->images)}}" style="max-width: 350px; max-height: 198px;" alt="Card image cap">
                         <div class="card-body">
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <a href="123"><p class="card-text">{{ str_limit($news[4]->about, 200)}}</p></a>
                         </div>
                     </div>
                 </div>
 
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
-                            <img class="card-img-top" src="{{asset('/images/image.jpg')}}" alt="Card image cap">
+                            <img class="card-img-top" src="{{url('storage/'.$news[5]->images)}}" style="max-width: 350px; max-height: 198px;" alt="Card image cap">
                             <div class="card-body">
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <a href="123"><p class="card-text">{{ str_limit($news[5]->about, 200)}}</p></a>
                             </div>
                         </div>
 
                     </div>
         </div>
     </div>
-
+@endif
 
 @endsection

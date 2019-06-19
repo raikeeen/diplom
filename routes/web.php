@@ -10,10 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'newsController@main')->name('main');
 
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::get('/news', 'newsController@index')->name('news');
 Route::get('/news/detail', 'newsController@detail')->name('detail');
 
