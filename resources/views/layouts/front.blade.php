@@ -34,9 +34,10 @@
             </ul>
             @if (Route::has('login'))
                 @auth
-            <button type="button" class="btn btn-primary" style="padding: 10px 22px;     font-size: 11px;">Добавить заказ</button>
-
-            <div class="flex-right full-height">
+                    <form action="{{route('add-task-get')}}" style="margin-block-end:0px">
+                        <button class="btn btn-primary" style="padding: 10px 22px;     font-size: 11px;">Добавить заказ</button>
+                    </form>
+                    <div class="flex-right full-height">
                     <div class="top-right links">
                             <span class="col-lg-2">
                                             <a class="nav-link dropdown-toggle navbar-brand text-white" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
@@ -44,7 +45,7 @@
                                                 <img src="{{asset('/images/github.png')}}" height="50px" width="50px">
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdown02">
-                                                <a class="dropdown-item" href="{{ url('/home') }}">Профиль</a>
+                                                <a class="dropdown-item" href="{{ url('/users').'/'.Auth::id()}}">Профиль</a>
                                                 <hr>
                                                 <a class="dropdown-item" href="#">Редактировать</a>
                                                 <a class="dropdown-item" href="#">Настройки</a>

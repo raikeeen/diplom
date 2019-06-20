@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{{asset('css/listTaskAndInfo.css')}}">
 @extends('layouts.front')
 @section('title')
-    <div class="container containerTask">
+    <div class="container containerTask" style="padding-top: 90px;">
         <div class="row">
             <div class="col-md-8 bigList" style="padding-left: 0px;padding-right: 0px; margin-left: 25px;">
                 <div class="userProfileHeader">

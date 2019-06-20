@@ -1,36 +1,25 @@
 <link rel="stylesheet" href="{{asset('css/search.css')}}">
 <link rel="stylesheet" href="{{asset('css/listTaskAndInfo.css')}}">
+<?
+        $task =
+?>
 @extends('layouts.front')
 @section('title')
-    <div class="container containerTask">
+    <div class="container containerTask" style="padding-top: 90px">
         <div class="row">
             <div class="col-md-8 bigList" style="padding-left: 0px;padding-right: 0px; margin-left: 25px;">
-                <div class="row" style="    position: relative;box-sizing: border-box;padding: 25px 75px 25px 20px;">
+                <div class="row" style="position: relative;box-sizing: border-box;padding: 25px 75px 25px 20px;">
                     <div class="col-md-12 taskDetailTitle">
-                        Ищем парт-тайм Ruby разработчика для доработок API на нашей платформе
+                        {{$tasks->name}}
                     </div>
                     <div class="col-md-12 taskFinance">
-                        10 000 руб. за выполнение<br>
+                        {{$tasks->price}} руб. за выполнение<br>
                     </div>
                     <div class="col-md-12 taskTags">
                         16 июня 2019, 09:46 • 0 откликов • 6 просмотров<br>
                     </div>
                     <div class="col-md-12 taskDescription">
-                        У нас есть сайт. На сайте есть бонусы и акции, турниры и тд.
-                        Потенциальным клиентам периодически проходит рассылка.
-                        Нужно придумать бонусы и акции, турниры и лотереи, на базе тех возможностей которые у нас есть (т.е. на базе того, с чем мы работаем)
-
-                        Мы предоставим список бонусов и акций, которые мы можем сделать, а Ваша задача придумать их на базе того, что у нас есть.
-
-                        С какой периодичностью делать рассылку клиентам, чтобы стимулировать их совершить "покупку".
-                        Т.е. придумать воронку продаж, которая будет стимулировать наших клиентов совершить покупку.
-
-                        Тематика гемблинг.
-
-                        Мы используем емейл рассылку.
-
-                        Если у Вас остались вопросы, пожалуйста задавайте.
-                        Бюджет по договорённости.
+                        {!! $tasks->about !!}
                     </div>
 
                 </div>

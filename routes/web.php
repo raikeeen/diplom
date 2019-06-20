@@ -20,9 +20,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/tasks', 'tasksController@index')->name('tasks');
-Route::get('/employer', 'employerController@index')->name('employer');
-Route::get('/tasks/detail', 'tasksController@detail')->name('tasks1');
-Route::get('/tasks/add', 'tasksController@add')->name('add');
+Route::get('/users/{id}', 'usersController@index')->name('users');
+
+Route::get('/tasks/{id}', 'tasksController@detail')->name('tasks-detail');
+
+Route::get('/createTask', 'tasksController@indexAdd')->name('add-task-get');
+Route::post('/createTask', 'tasksController@add')->name('add-task-post');
+
 
 
 

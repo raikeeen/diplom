@@ -21,7 +21,7 @@
             <div class="col-md-8 bigList" style="margin-left: 25px;">
                 <header>
                     <div class="layoutTitle" style="padding: 12px 15px;padding-bottom: 0px;font-size: 19px;">
-                    Заказы (1322)
+                    Заказы ({{count($tasks)}})
                     </div>
                     <hr>
                     <div class="md-form mt-0">
@@ -29,58 +29,32 @@
                     </div>
                     <hr>
                 </header>
-                <div class="row" style="padding-bottom: 25px;">
-                    <div class="col-md-10 taskTitle">
-                        <b><a href="{{route('tasks1')}}">Ищем парт-тайм Ruby разработчика для доработок API на нашей платформе</a></b>
+                @foreach($tasks as $task)
+                    <div class="row" style="padding-bottom: 25px;">
+                        <div class="col-md-10 taskTitle">
+                            <b><a href="{{route('tasks-detail',['id'=>$task->id])}}">{{$task->name}}</a></b>
+                        </div>
+                        <div class="col-md-2" style="text-align: right; padding-left: 0px">
+                            @if($task->price!="договорная")
+                                <img src="http://localhost/diplom/public/storage/money.png" style="float: left;" width="40" height="30">
+                                <div style="color: #4abfb4; font-weight: 700;">{{$task->price}}руб</div>
+                                @else
+                                <div class="col-md-2" style="text-align: right;">
+                                    договорная
+                                </div>
+                            @endif
+                        </div>
                     </div>
-                    <div class="col-md-2" style="text-align: right;">
-                        договорная
+                    <div class="row">
+                        <div class="col-md-10" style="">
+                            2 отклика • 22 просмотра
+                        </div>
+                        <div class="col-md-2" style="text-align: right;">
+                            19/08/19
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-10" style="">
-                        2 отклика • 22 просмотра
-                    </div>
-                    <div class="col-md-2" style="text-align: right;">
-                        19/08/19
-                    </div>
-                </div>
-                <hr>
-                <div class="row" style="padding-bottom: 25px;">
-                    <div class="col-md-10 taskTitle">
-                        <b><a href="{{route('tasks1')}}">Ищем парт-тайм Ruby разработчика для доработок API на нашей платформе</a></b>
-                    </div>
-                    <div class="col-md-2" style="text-align: right; padding-left: 0px">
-                           <img src="http://localhost/diplom/public/storage/money.png" style="float: left;" width="40" height="30">
-                        <div style="color: #4abfb4; font-weight: 700;"> 1800 руб</div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-10" style="">
-                        2 отклика • 22 просмотра
-                    </div>
-                    <div class="col-md-2" style="text-align: right;">
-                        19/08/19
-                    </div>
-                </div>
-                <hr>
-                <div class="row" style="padding-bottom: 25px;">
-                    <div class="col-md-10 taskTitle">
-                        <b><a href="{{route('tasks1')}}">Ищем парт-тайм Ruby разработчика для доработок API на нашей платформе</a></b>
-                    </div>
-                    <div class="col-md-2" style="text-align: right;">
-                        договорная
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-10" style="">
-                        2 отклика • 22 просмотра
-                    </div>
-                    <div class="col-md-2" style="text-align: right;">
-                        19/08/19
-                    </div>
-                </div>
-                <hr>
+                    <hr>
+                @endforeach
             </div>
             <div class="col-md-3 smallList">
                     <div class="layoutTitle" style="padding: 12px 15px;border-bottom: 1px solid #eceeef;">

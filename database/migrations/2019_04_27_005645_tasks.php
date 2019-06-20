@@ -16,11 +16,8 @@ class Tasks extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
-            $table->string('images');
-            $table->string('contact');
-            $table->integer('userid');
             $table->longText('about');
-            $table->date('data');
+            $table->string('price')->default('договорная');
             $table->string('fulfilment')->default('open');
 
             $table->integer('idTowns')->unsigned();
