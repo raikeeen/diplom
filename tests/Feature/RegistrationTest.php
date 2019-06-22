@@ -13,13 +13,13 @@ class RegistrationTest extends TestCase
     use WithFaker;
 
     /**
-     * Unit-тест для проверки регистрации
+     * Тест для проверки регистрации
      */
     public function testExample()
     {
         Mail::fake();
 
-        $name='Aleksandr';
+        $name='nikitaSkrobov';
 
         $this->post('/register',[
             'name' => $name,
