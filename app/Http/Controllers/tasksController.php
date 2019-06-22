@@ -12,8 +12,12 @@ class tasksController extends Controller
 {
     public function index()
     {
+        $towns=towns::orderBy('id','DESC')->get();
         $tasks=tasks::orderBy('id','DESC')->get();
-        return view('tasks.tasks', ['tasks' => $tasks]);
+        return view('tasks.tasks',
+            ['tasks' => $tasks],
+            ['towns' => $towns]
+            );
     }
     public function detail(Request $request)
     {

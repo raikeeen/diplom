@@ -18,9 +18,9 @@ class newsController extends Controller
         $news = news::orderBy('id','DESC')->get();
         return view('welcome', ['news' => $news]);
     }
-    public function detail()
+    public function detail(Request $request)
     {
-        return view('news.detail');
-
+        $news = news::where('id', $request->id)->first();
+        return view('news.detail', ['news' => $news]);
     }
 }

@@ -13,7 +13,7 @@
                                 <img class="avatario" src="http://localhost/diplom/public/images/avatar.png">
                                 </div>
                                 <div class="userInfo">
-                                    <h2 class="userName"><a href="123">Никита Вячеславович</a></h2>
+                                    <h2 class="userName"><a href="">Nikita</a></h2>
                                     <div class="userProf">
                                         Manager
                                     </div>

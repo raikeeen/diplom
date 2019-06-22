@@ -13,7 +13,7 @@
 Route::get('/', 'newsController@main')->name('main');
 
 Route::get('/news', 'newsController@index')->name('news');
-Route::get('/news/detail', 'newsController@detail')->name('detail');
+Route::get('/news/{id}', 'newsController@detail')->name('news-detail');
 
 
 Auth::routes();

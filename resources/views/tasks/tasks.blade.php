@@ -111,6 +111,17 @@
                         </div>
                     </li>
                 </ul>
+                <div class="layoutTitle" style="padding: 12px 15px;border-top: 1px solid #eceeef;border-bottom: 1px solid #eceeef;">
+                    По городам
+                </div>
+                <div style="padding: 15px">
+                <select class="form-control" id="exampleFormControlSelect1" name="town">
+                    <option></option>
+                    @foreach($towns as $town)
+                        <option value="{{$town->id}}">{{$town->name}}</option>
+                    @endforeach
+                </select>
+                </div>
             </div>
         </div>
     </div>

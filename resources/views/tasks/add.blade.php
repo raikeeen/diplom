@@ -36,6 +36,7 @@
                         <li class="formFieldsGroup">
                             <label  class="title" for="exampleFormControlSelect1">Выберите город</label>
                             <select class="form-control" id="exampleFormControlSelect1" name="town">
+                                <option value="" selected>Выберите из списка</option>
                                 @foreach($towns as $town)
                                 <option value="{{$town->id}}">{{$town->name}}</option>
                                 @endforeach

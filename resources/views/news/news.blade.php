@@ -25,7 +25,7 @@
                 <div class="col-md-5">
                     <h3>{{$new->name}}</h3>
                     <p>{{ str_limit($new->about, 150)}}</p>
-                    <a class="btn btn-primary" href="{{route('detail')}}">Читать</a>
+                    <a class="btn btn-primary" href="{{route('news-detail',['id' => $new->id])}}">Читать</a>
 
                 </div>
             </div>

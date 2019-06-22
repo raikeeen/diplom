@@ -136,7 +136,7 @@
                         <p class="card-text">{{ str_limit($news[0]->about, 350)}}</p>
                         <div class="row">
                         <div class="col-md-10">
-                            <a href="#">Читать сейчас</a>
+                            <a href="{{route('news-detail',['id' => $news[0]->id])}}">Читать сейчас</a>
                         </div>
                         <div class="col-md-2">{{$news[0]->created_at}}</div>
                         </div>
@@ -149,7 +149,7 @@
                         <div class="card mb-12 box-shadow">
                             <img class="card-img-top" src="{{url('storage/'.$news[1]->images)}}" style="max-width: 350px; max-height: 198px;" alt="Card image cap">
                             <div class="card-body">
-                                <a href="123"><p class="card-text">{{ str_limit($news[1]->about, 200)}}</p></a>
+                                <a href="{{route('news-detail',['id' => $news[1]->id])}}"><p class="card-text">{{ str_limit($news[1]->about, 200)}}</p></a>
                             </div>
                         </div>
 
@@ -158,7 +158,7 @@
                         <div class="card mb-12 box-shadow">
                             <img class="card-img-top" src="{{url('storage/'.$news[2]->images)}}" style="max-width: 350px; max-height: 198px;" alt="Card image cap">
                             <div class="card-body">
-                                <a href="123"><p class="card-text">{{ str_limit($news[2]->about, 200)}}</p></a>
+                                <a href="{{route('news-detail',['id' => $news[2]->id])}}"><p class="card-text">{{ str_limit($news[2]->about, 200)}}</p></a>
                             </div>
                         </div>
 
@@ -171,7 +171,7 @@
                 <div class="card mb-4 box-shadow">
                     <img class="card-img-top" src="{{url('storage/'.$news[3]->images)}}" style="max-width: 350px; max-height: 198px;" alt="Card image cap">
                     <div class="card-body">
-                        <a href="123"><p class="card-text">{{ str_limit($news[3]->about, 200)}}</p></a>
+                        <a href="{{route('news-detail',['id' => $news[3]->id])}}"><p class="card-text">{{ str_limit($news[3]->about, 200)}}</p></a>
                     </div>
                 </div>
             </div>
@@ -180,7 +180,7 @@
                     <div class="card mb-4 box-shadow">
                         <img class="card-img-top" src="{{url('storage/'.$news[4]->images)}}" style="max-width: 350px; max-height: 198px;" alt="Card image cap">
                         <div class="card-body">
-                            <a href="123"><p class="card-text">{{ str_limit($news[4]->about, 200)}}</p></a>
+                            <a href="{{route('news-detail',['id' => $news[4]->id])}}"><p class="card-text">{{ str_limit($news[4]->about, 200)}}</p></a>
                         </div>
                     </div>
                 </div>
@@ -189,7 +189,7 @@
                         <div class="card mb-4 box-shadow">
                             <img class="card-img-top" src="{{url('storage/'.$news[5]->images)}}" style="max-width: 350px; max-height: 198px;" alt="Card image cap">
                             <div class="card-body">
-                                <a href="123"><p class="card-text">{{ str_limit($news[5]->about, 200)}}</p></a>
+                                <a href="{{route('news-detail',['id' => $news[5]->id])}}"><p class="card-text">{{ str_limit($news[5]->about, 200)}}</p></a>
                             </div>
                         </div>
 

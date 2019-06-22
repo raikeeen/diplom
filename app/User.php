@@ -40,7 +40,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     public function tasks(){
-        return $this->hasMany(Task::class,'idUser');
+        return $this->hasMany(Tasks::class,'idUser');
     }
 
 }
