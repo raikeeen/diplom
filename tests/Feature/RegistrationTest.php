@@ -3,6 +3,8 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
+use App\Mail\RegistrationMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -11,12 +13,12 @@ class RegistrationTest extends TestCase
     use WithFaker;
 
     /**
-     * A basic feature test example.
-     *
-     * @return void
+     * Unit-тест для проверки регистрации
      */
     public function testExample()
     {
+        Mail::fake();
+
         $name='Aleksandr';
 
         $this->post('/register',[
@@ -29,5 +31,7 @@ class RegistrationTest extends TestCase
         $this->assertDatabaseHas('users',[
             'name' => $name
         ]);
+
+        Mail::assertQueued(RegistrationMail::class);
     }
 }
