@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
 use App\Models\Tasks;
+use App\Models\Reviews;
 
 class User extends Authenticatable
 {
@@ -41,6 +42,9 @@ class User extends Authenticatable
     ];
     public function tasks(){
         return $this->hasMany(Tasks::class,'idUser');
+    }
+    public function reviews(){
+        return $this->hasMany(Reviews::class,'idUser');
     }
 
 }

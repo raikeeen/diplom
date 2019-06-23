@@ -7,7 +7,8 @@ use App\Models\Tasks;
 class AddTaskUser extends Model
 {
     protected $table = 'addUserTask';
+
     public function tasks(){
-        return $this->hasMany(Task::class,'idAddTask');
+        return $this->belongsTo('App\Models\Tasks');
     }
 }

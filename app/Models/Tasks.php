@@ -3,21 +3,25 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\AddTaskUser;
 use App\User;
 
 class Tasks extends Model
 {
     protected $table = 'tasks';
+
     public function user(){
         return $this->belongsTo('App\User');
     }
     public function towns(){
         return $this->belongsTo('App\Models\Towns');
     }
-    public function addTaskUser(){
-        return $this->belongsTo('App\Models\AddTaskUser');
-    }
     public function category(){
         return $this->belongsTo('App\Models\Category');
     }
+
+    public function addUserTask(){
+        return $this->hasMany(AddTaskUser::class,'idTask');
+    }
+
 }

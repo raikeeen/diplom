@@ -18,6 +18,10 @@ class Reviews extends Migration
             $table->integer('idUserReviewСreator');
             $table->string('descriptions');
             $table->integer('rating');
+
+            $table->integer('idUser')->unsigned();
+            $table->foreign('idUser')->references('id')->on('users');
+
             $table->timestamps();
         });
     }

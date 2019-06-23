@@ -16,6 +16,11 @@ class AddUserTask extends Migration
         Schema::create('addUserTask', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('idUser');
+            $table->longText('about');
+
+            $table->integer('idTask')->unsigned();
+            $table->foreign('idTask')->references('id')->on('tasks');
+
             $table->timestamps();
         });
     }

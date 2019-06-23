@@ -23,6 +23,7 @@ Route::get('/tasks', 'tasksController@index')->name('tasks');
 Route::get('/users/{id}', 'usersController@index')->name('users');
 
 Route::get('/tasks/{id}', 'tasksController@detail')->name('tasks-detail');
+Route::post('/tasks/{id}', 'tasksController@apply')->name('tasks-detail-apply');
 
 Route::get('/createTask', 'tasksController@indexAdd')->name('add-task-get');
 Route::post('/createTask', 'tasksController@add')->name('add-task-post');

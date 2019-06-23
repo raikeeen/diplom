@@ -1,8 +1,6 @@
 <link rel="stylesheet" href="{{asset('css/search.css')}}">
 <link rel="stylesheet" href="{{asset('css/listTaskAndInfo.css')}}">
-<?
-        $task =
-?>
+
 @extends('layouts.front')
 @section('title')
     <div class="container containerTask" style="padding-top: 90px">
@@ -28,19 +26,33 @@
                         Ваш отклик на заказ
                     </div>
                 </div>
-                <form style="padding: 20px;">
+                @if(is_null($check))
+                <form class="action" method="post" enctype="multipart/form-data" action="{{route('tasks-detail-apply',['id' => $tasks->id])}}" style="padding: 20px;">
+                    {{csrf_field()}}
                     <div class="userForm">
                         <div class="avatar">
                             <img class="avatario" src="http://localhost/diplom/public/images/avatar.png" style="width: 50px; height: 50px; border: 0px">
                         </div>
                         <div>
-                            <textarea class="form-control" rows="5" data-role="oembed-input" data-target="#oembed-preview" data-maxlength="3000" name="task_comment[body]" id="task_comment_body" style="overflow: hidden; overflow-wrap: break-word; resize: none; width: 550px; height: 127px;"></textarea>
+                            <textarea class="form-control" rows="5" data-role="oembed-input" data-target="#oembed-preview" data-maxlength="3000" name="task_comment" id="task_comment_body" style="overflow: hidden; overflow-wrap: break-word; resize: none; width: 550px; height: 127px;"></textarea>
                             <div style="margin-top: 10px; margin-left: 75px">
-                                <button type="button" class="btn btn-secondary">Откликнуться</button>
+                                <button type="submit" class="btn btn-secondary">Откликнуться</button>
                             </div>
                         </div>
                     </div>
                 </form>
+                    @else
+                    <div class="emptyBlockHolder">
+                        <div class="emptyBlockRecommendations">
+                            <div class="emptyBlockTitle">
+                                <div class="emptyBlockTitleRec">
+                                    <img src="http://localhost/diplom/public/storage/"><br>
+                                    {{$check}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
             </div>
             <div class="clearfix"></div>
             <div class="col-md-3 smallList">
