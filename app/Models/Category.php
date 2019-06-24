@@ -9,6 +9,6 @@ class Category extends Model
 {
     protected $table = 'category';
     public function tasks(){
-        return $this->hasMany(Task::class,'idCategory');
+        return $this->hasMany(Tasks::class,'idCategory');
     }
 }

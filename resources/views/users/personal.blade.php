@@ -1,5 +1,11 @@
 <link rel="stylesheet" href="{{asset('css/search.css')}}">
 <link rel="stylesheet" href="{{asset('css/listTaskAndInfo.css')}}">
+<link href="{{asset('css/addTask.css')}}" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
 @extends('layouts.front')
 @section('title')
     <div class="container containerTask" style="padding-top: 90px;">
@@ -7,71 +13,55 @@
             <div class="col-md-8 bigList" style="padding-left: 0px;padding-right: 0px; margin-left: 25px;">
                 <div class="userProfileHeader">
                     <div class="ProfileHeaderImg">
-                        <div class="bannerImg"
-                             style="background-image: url('http://localhost/diplom/public/storage/uploads/anonim.jpg');">
+                        <div class="bannerImg" style="background-image: url('http://localhost/diplom/public/storage/uploads/anonim.jpg');">
+                            <form class="action" method="post" enctype="multipart/form-data" action="{{route('users-personal-edit')}}">
+                                {{csrf_field()}}
                             <div class="userProfileBannerInfo">
                                 <div class="avatar">
                                     <img class="avatario" src="{{url('storage/'.$users->avatar)}}">
                                 </div>
                                 <div class="userInfo">
-                                    <h2 class="userName"><a
-                                                href="{{ url('/users').'/'.$users->id}}">{{$users->name}}</a></h2>
+                                    <h2 class="userName"><a href="{{ url('/users').'/'.$users->id}}">{{$users->name}}</a></h2>
                                     <div class="userProf">
                                         Manager
+                                    </div>
+                                    <div class="userMeta">
+                                        <div class="form-group">
+                                            <input name="avatarImg" type="file">
+                                        </div>
                                     </div>
                                     <div class="userMeta">
                                         Россия, Казань
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
                 <div class="userBlockInfo">
-                    <div class="userBlockInfoTitle">
-                        Обо мне
+                    <div class="userBlockInfoTitle" >
+                        Редактировать
                     </div>
                     <dd class="userBlockInfoContent">
-                        <dl>
-                            <dd>
-                                <span>
-                                    @if(!is_null($users->about))
-                                        {!! $users->about  !!}
-                                    @else
-                                        <div class="emptyBlockHolder">
-                                            <div class="emptyBlockRecommendations">
-                                                <div class="emptyBlockTitle">
-                                                    <div class="emptyBlockTitleRec">
-                                                        Пользователь не добавил информацию о себе
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endif
-                                </span>
-                            </dd>
-                        </dl>
+
+                        <div class="userBlockInfoContentAbout">
+                            <label style="font-weight: bold">Имя</label>
+                            <input id="task_money_origin" value="{{$users->name}}" class="form-control form-control_small form-control_money money_format" type="text" name="name">
+                        </div>
+                        <div class="userBlockInfoContentAbout">
+                            <label style="font-weight: bold">Контакты</label>
+                            <textarea  class="form-control" name="contact">{{$users->contact}}</textarea>
+                        </div>
+                        <div class="userBlockInfoContentAbout">
+                            <label style="font-weight: bold">О себе</label>
+                            <textarea  class="form-control" name="about" id="summernote">{{$users->about}}</textarea>
+                        </div>
+                        <button type="submit" class="btn btn-default" style="margin-top: 10px;">Сохранить</button>
+                        </form>
                     </dd>
                     <div class="userBlockInfoOptions">
 
                     </div>
-                </div>
-                <div class="userBlockInfoTitle">
-                    Отзывы
-                </div>
-                <div class="emptyBlockHolder">
-                    <div class="emptyBlockRecommendations">
-                        <div class="emptyBlockTitle">
-                            <div class="emptyBlockTitleRec">
-                                <img src="http://localhost/diplom/public/storage/recomend.JPG"><br>
-                                Нет отзывов
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
                 </div>
             </div>
             <div class="col-md-3 smallList">
@@ -134,20 +124,11 @@
                             </div>
                             <hr>
                             <div class="title">Верификация</div>
-                            @if(!is_null($users->email_verified_at))
-                            <p class="rightTextListSmall" style="white-space: pre-wrap;">Пользователь верифицирован по
-                                email</p>
-                            @else
-                                <p class="rightTextListSmall" style="white-space: pre-wrap;">Пользователь не прошел верификацию</p>
-                            @endif
+                            <p class="rightTextListSmall" style="white-space: pre-wrap;">Пользователь верифицирован по номеру телефона</p>
                             <hr>
                             <div class="title">Контакты</div>
-                            @if(!is_null($users->contact))
-                                <p class="rightTextListSmall" style="white-space: pre-wrap;">{{$users->contact}}</p>
-                            @else
-                                <p class="rightTextListSmall" style="white-space: pre-wrap;">Этот пользователь не указал
-                                    никаких контактов.</p>
-                            @endif
+                            <p class="rightTextListSmall" style="white-space: pre-wrap;">Этот пользователь не указал никаких контактов.</p>
+
                         </div>
                         <hr>
                     </div>
@@ -157,4 +138,11 @@
 
         </div>
     </div>
+    <script>
+        $('#summernote').summernote({
+            placeholder: 'Опишите ваш заказ',
+            tabsize: 2,
+            height: 100
+        });
+    </script>
 @endsection

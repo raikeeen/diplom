@@ -1,5 +1,7 @@
 <link rel="stylesheet" href="{{asset('css/search.css')}}">
 <link rel="stylesheet" href="{{asset('css/listTaskAndInfo.css')}}">
+<link href="{{asset('css/addTask.css')}}" rel="stylesheet">
+
 @extends('layouts.front')
 @section('title')
     <div class="container containerTask" style="padding-top: 90px;">
@@ -7,15 +9,13 @@
             <div class="col-md-8 bigList" style="padding-left: 0px;padding-right: 0px; margin-left: 25px;">
                 <div class="userProfileHeader">
                     <div class="ProfileHeaderImg">
-                        <div class="bannerImg"
-                             style="background-image: url('http://localhost/diplom/public/storage/uploads/anonim.jpg');">
+                        <div class="bannerImg" style="background-image: url('http://localhost/diplom/public/storage/uploads/anonim.jpg');">
                             <div class="userProfileBannerInfo">
                                 <div class="avatar">
                                     <img class="avatario" src="{{url('storage/'.$users->avatar)}}">
                                 </div>
                                 <div class="userInfo">
-                                    <h2 class="userName"><a
-                                                href="{{ url('/users').'/'.$users->id}}">{{$users->name}}</a></h2>
+                                    <h2 class="userName"><a href="{{ url('/users').'/'.$users->id}}">{{$users->name}}</a></h2>
                                     <div class="userProf">
                                         Manager
                                     </div>
@@ -24,54 +24,66 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
                 <div class="userBlockInfo">
-                    <div class="userBlockInfoTitle">
-                        Обо мне
+                    <div class="userBlockInfoTitle" >
+                        Мои заказы
                     </div>
-                    <dd class="userBlockInfoContent">
-                        <dl>
-                            <dd>
-                                <span>
-                                    @if(!is_null($users->about))
-                                        {!! $users->about  !!}
-                                    @else
-                                        <div class="emptyBlockHolder">
-                                            <div class="emptyBlockRecommendations">
-                                                <div class="emptyBlockTitle">
-                                                    <div class="emptyBlockTitleRec">
-                                                        Пользователь не добавил информацию о себе
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endif
-                                </span>
-                            </dd>
-                        </dl>
-                    </dd>
-                    <div class="userBlockInfoOptions">
 
+                    <div class="tabMenu">
+                        <div class="tabItems">
+                            <a href="{{route('tasks-my')}}" class="tabLiks line">
+                                Размещенные ({{!is_null($tasks)? count($tasks) : 0}})
+                            </a>
+                            <a  href="{{route('tasks-my-work')}}" class="tabLiks line">
+                                В работе ({{!is_null($taskWork)? count($taskWork) : 0}})
+                            </a>
+                            <a href="{{route('tasks-my-close')}}" class="tabLiks line">
+                                Завершенные ({{!is_null($taskClose)? count($taskClose) : 0}})
+                            </a>
+                        </div>
+                        <hr>
                     </div>
-                </div>
-                <div class="userBlockInfoTitle">
-                    Отзывы
-                </div>
-                <div class="emptyBlockHolder">
-                    <div class="emptyBlockRecommendations">
-                        <div class="emptyBlockTitle">
-                            <div class="emptyBlockTitleRec">
-                                <img src="http://localhost/diplom/public/storage/recomend.JPG"><br>
-                                Нет отзывов
+                    @if(is_null($taskWork))
+                        <div class="emptyBlockHolder">
+                            <div class="emptyBlockRecommendations">
+                                <div class="emptyBlockTitle">
+                                    <div class="emptyBlockTitleRec">
+                                        Активных заказов нет
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div>
+                    @else
+                        @foreach($taskWork as $task)
+                            <div class="row" style="padding-bottom: 25px;padding-left: 15px;padding-right: 15px">
+                                <div class="col-md-10 taskTitle">
+                                    <b><a href="{{route('tasks-detail',['id'=>$task->id])}}">{{$task->name}}</a></b>
+                                </div>
+                                <div class="col-md-2" style="text-align: right; padding-left: 0px">
+                                    @if($task->price!="договорная")
+                                        <img src="http://localhost/diplom/public/storage/money.png" style="float: left;" width="40" height="30">
+                                        <div style="color: #4abfb4; font-weight: 700;">{{$task->price}}руб</div>
+                                    @else
+                                        <div class="col-md-2" style="text-align: right;">
+                                            договорная
+                                        </div>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="row" style="padding-left: 15px;padding-right: 15px">
+                                <div class="col-md-10" style="">
+                                    2 отклика • 22 просмотра
+                                </div>
+                                <div class="col-md-2" style="text-align: right;">
+                                    19/08/19
+                                </div>
+                            </div>
+                            <hr>
+                        @endforeach
+                    @endif
                 </div>
             </div>
             <div class="col-md-3 smallList">
@@ -134,27 +146,17 @@
                             </div>
                             <hr>
                             <div class="title">Верификация</div>
-                            @if(!is_null($users->email_verified_at))
-                            <p class="rightTextListSmall" style="white-space: pre-wrap;">Пользователь верифицирован по
-                                email</p>
-                            @else
-                                <p class="rightTextListSmall" style="white-space: pre-wrap;">Пользователь не прошел верификацию</p>
-                            @endif
+                            <p class="rightTextListSmall" style="white-space: pre-wrap;">Пользователь верифицирован по номеру телефона</p>
                             <hr>
                             <div class="title">Контакты</div>
-                            @if(!is_null($users->contact))
-                                <p class="rightTextListSmall" style="white-space: pre-wrap;">{{$users->contact}}</p>
-                            @else
-                                <p class="rightTextListSmall" style="white-space: pre-wrap;">Этот пользователь не указал
-                                    никаких контактов.</p>
-                            @endif
+                            <p class="rightTextListSmall" style="white-space: pre-wrap;">Этот пользователь не указал никаких контактов.</p>
+
                         </div>
                         <hr>
                     </div>
 
                 </div>
             </div>
-
         </div>
     </div>
 @endsection

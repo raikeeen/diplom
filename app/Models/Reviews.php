@@ -9,6 +9,6 @@ class Reviews extends Model
     protected $table = 'reviews';
 
     public function user(){
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User','idUser');
     }
 }

@@ -15,6 +15,11 @@
     }
 </style>
 @extends('layouts.front')
+<!--<header id="header" class="sticky_header" style="background-color: #6351ce; margin-top: 70px;">
+    <div class="container" style="color: #6351ce;">
+        <span class="col-lg-1"><a class="navbar-brand text-white" href="">Важная информация</a></span>
+    </div>
+</header>-->
 @section('title')
     <div class="container containerTask adWords" style="padding-top: 90px">
         <div class="row">

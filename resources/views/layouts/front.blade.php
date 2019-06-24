@@ -42,12 +42,13 @@
                             <span class="col-lg-2">
                                             <a class="nav-link dropdown-toggle navbar-brand text-white" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                                                 {{ Auth::user()->name }}
-                                                <img src="{{asset('/images/github.png')}}" height="50px" width="50px">
+                                                <img src="{{url('storage/'.Auth::user()->avatar)}}" height="50px" width="50px" style="border-radius: 50%;">
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdown02">
                                                 <a class="dropdown-item" href="{{ url('/users').'/'.Auth::id()}}">Профиль</a>
                                                 <hr>
-                                                <a class="dropdown-item" href="#">Редактировать</a>
+                                                <a class="dropdown-item" href="{{route('users-personal-index')}}">Редактировать</a>
+                                                <a class="dropdown-item" href="{{route('tasks-my')}}">Мои заявки</a>
                                                 <a class="dropdown-item" href="#">Настройки</a>
                                                 <a class="dropdown-item" href="#">Помощь</a>
                                                 <hr>

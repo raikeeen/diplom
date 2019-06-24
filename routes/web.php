@@ -21,6 +21,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/tasks', 'tasksController@index')->name('tasks');
 Route::get('/users/{id}', 'usersController@index')->name('users');
+Route::get('/personal', 'usersController@personalIndex')->name('users-personal-index');
+Route::post('/personal', 'usersController@personalEdit')->name('users-personal-edit');
+
+Route::get('/personal/activeTask', 'tasksController@my')->name('tasks-my');
+Route::get('/personal/workTask', 'tasksController@myWork')->name('tasks-my-work');
+Route::get('/personal/closeTask', 'tasksController@myClose')->name('tasks-my-close');
+
 
 Route::get('/tasks/{id}', 'tasksController@detail')->name('tasks-detail');
 Route::post('/tasks/{id}', 'tasksController@apply')->name('tasks-detail-apply');
