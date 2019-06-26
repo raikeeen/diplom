@@ -41,7 +41,7 @@
                         </div>
                         <div class="col-md-2" style="text-align: right; padding-left: 0px">
                             @if($task->price!="договорная")
-                                <img src="http://localhost/diplom/public/storage/money.png" style="float: left;" width="40" height="30">
+                                <img src="{{url('storage/uploads/money.png')}}" style="float: left;" width="40" height="30">
                                 <div style="color: #4abfb4; font-weight: 700;">{{$task->price}}руб</div>
                                 @else
                                 <div class="col-md-2" style="text-align: right;">
@@ -52,10 +52,10 @@
                     </div>
                     <div class="row">
                         <div class="col-md-10" style="">
-                            2 отклика • 22 просмотра
+                            • Отклики {{count($task->addUserTask)}} •
                         </div>
                         <div class="col-md-2" style="text-align: right;">
-                            19/08/19
+                            {{$task->created_at}}
                         </div>
                     </div>
                     <hr>
@@ -65,33 +65,7 @@
                     <div class="layoutTitle" style="padding: 12px 15px;border-bottom: 1px solid #eceeef;">
                         Фильтры
                     </div>
-                    <ul class="categoryGroup" style="margin-bottom: 0px; padding-bottom: 0px">
-                        <li class="categoryGroupFolder">
-                            <div class="categoryGroupName checkbox_flat">
-                                    <div class="checkbox  checkbox-xs">
-                                        <label>
-                                            <input type="checkbox" value="">
-                                                <i class="fa fa-lg icon-checkbox"></i>
-                                            <span class="linkDotted js-toggle">Тайные покупатели</span>
-                                        </label>
-                                    </div>
-                            </div>
-                        </li>
-                        <li class="categoryGroupFolder">
-                            <div class="categoryGroupName checkbox_flat">
-                                <div class="checkbox  checkbox-xs">
-                                    <label>
-                                        <input type="checkbox" value="">
-                                        <i class="fa fa-lg icon-checkbox"></i>
-                                        <span class="linkDotted js-toggle">Опросы</span>
-                                    </label>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                <div class="layoutTitle" style="padding: 12px 15px;border-top: 1px solid #eceeef;border-bottom: 1px solid #eceeef;">
-                    Дополнительно
-                </div>
+
                 <ul class="categoryGroup" style="margin-bottom: 0px; padding-bottom: 0px">
                     <li class="categoryGroupFolder">
                         <div class="categoryGroupName checkbox_flat">

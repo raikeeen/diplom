@@ -17,7 +17,6 @@ Route::get('/news/{id}', 'newsController@detail')->name('news-detail');
 
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/tasks', 'tasksController@index')->name('tasks');
 Route::get('/users/{id}', 'usersController@index')->name('users');
@@ -28,8 +27,24 @@ Route::get('/personal/activeTask', 'tasksController@my')->name('tasks-my');
 Route::get('/personal/workTask', 'tasksController@myWork')->name('tasks-my-work');
 Route::get('/personal/closeTask', 'tasksController@myClose')->name('tasks-my-close');
 
+Route::get('/personal/response/{id}', 'tasksController@response')->name('tasks-my-response');
+Route::get('/personal/response/select/{id}', 'tasksController@responseSelect')->name('tasks-my-response-select');
+Route::post('/personal/response/select/{id}', 'tasksController@responseSelectPost')->name('tasks-my-response-select-post');
+Route::get('/personal/response/dialog/{id}', 'tasksController@responseDialog')->name('tasks-my-response-dialog');
+Route::post('/personal/response/dialog/{id}', 'tasksController@responseDialogPost')->name('tasks-my-response-dialog-messages');
+
+Route::get('/personal/response/review/{id}', 'tasksController@review')->name('tasks-my-review');
+Route::post('/personal/response/review/{id}', 'tasksController@reviewPost')->name('tasks-my-review-post');
+
+
+
+Route::post('/personal/response/{id}', 'tasksController@responsePost')->name('tasks-my-response-post');
+
+
 
 Route::get('/tasks/{id}', 'tasksController@detail')->name('tasks-detail');
+Route::get('/tasks/{id}/dialog', 'tasksController@dialog')->name('tasks-dialog');
+
 Route::post('/tasks/{id}', 'tasksController@apply')->name('tasks-detail-apply');
 
 Route::get('/createTask', 'tasksController@indexAdd')->name('add-task-get');

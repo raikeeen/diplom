@@ -8,7 +8,7 @@
                 <div class="userProfileHeader">
                     <div class="ProfileHeaderImg">
                         <div class="bannerImg"
-                             style="background-image: url('http://localhost/diplom/public/storage/uploads/anonim.jpg');">
+                             style="background-image: url('https://pp.userapi.com/c855732/v855732869/7ed46/u6fpEXlDw48.jpg');">
                             <div class="userProfileBannerInfo">
                                 <div class="avatar">
                                     <img class="avatario" src="{{url('storage/'.$users->avatar)}}">

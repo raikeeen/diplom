@@ -13,7 +13,7 @@
             <div class="col-md-8 bigList" style="padding-left: 0px;padding-right: 0px; margin-left: 25px;">
                 <div class="userProfileHeader">
                     <div class="ProfileHeaderImg">
-                        <div class="bannerImg" style="background-image: url('http://localhost/diplom/public/storage/uploads/anonim.jpg');">
+                        <div class="bannerImg" style="background-image: url('https://pp.userapi.com/c855732/v855732869/7ed46/u6fpEXlDw48.jpg');">
                             <form class="action" method="post" enctype="multipart/form-data" action="{{route('users-personal-edit')}}">
                                 {{csrf_field()}}
                             <div class="userProfileBannerInfo">

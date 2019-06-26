@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Models\RoleUser;
+use App\Models\Role;
 use App\Models\Tasks;
 use Illuminate\Support\Facades\Storage;
 
@@ -15,6 +17,18 @@ class usersController extends Controller
     {
         $users = user::where('id', $request->id)->first();
         return view('users.detail',[
+            'users' => $users
+        ]);
+    }
+    public function front()
+    {
+        $userId = Auth::id();
+        $users = user::where('id', $userId)->first();
+        dump($users->Role->name);
+        //if($users->Role->name == 'компания')
+
+
+        return view('layouts.front',[
             'users' => $users
         ]);
     }
@@ -57,8 +71,18 @@ class usersController extends Controller
 
         $users->save();
 
+        /*dump($users->Role);
+        if($users->Role) {
+            $userRole = new RoleUser();
+            $userRole->user_id = $userId;
+            $userRole->role_id = $request->anonim;
+            $userRole->save();
+        }*/
+
+
+
         return view('users.personal',[
-            'users' => $users
+            'users' => $users,
         ]);
     }
 }

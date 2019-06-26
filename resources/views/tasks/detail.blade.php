@@ -46,17 +46,14 @@
                     </div>
                 </form>
                     @elseif($check == 'Отклики')
+
                     <div class="userForm row" style="padding: 25px">
-                            <img class="avatario" src="{{url('storage/'.Auth::user()->avatar)}}" style="width: 50px; height: 50px; border: 0px;">
-                        <div class="col-md-10" style="font-size: 19px;">
-                            <a href="">ИМЯЯЯЯЯЯЯЯЯЯЯЯЯЯЯ кто подал</a><br>
-                                    <div style="font-size: 12px;">
-                                        dfsdfsdfsdfsdfsdff
-                                    </div>
-                            <br>
+
+
+
                             <div class="row">
                             <div class="col-md-4" style="">
-                                <form action="{{route('tasks-detail',['id'=>12])}}" style="margin-block-end:0px;">
+                                <form action="{{route('tasks-dialog',['id' => $tasks->id])}}" style="margin-block-end:0px;">
                                     <button class="btn btn-warning" style="padding: 10px 20px;     font-size: 11px;">Назначить исполнителем</button>
                                 </form>
                             </div>

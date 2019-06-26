@@ -60,7 +60,7 @@
                     @foreach($tasks as $task)
                         <div class="row" style="padding-bottom: 25px;padding-left: 15px;padding-right: 15px">
                             <div class="col-md-10 taskTitle">
-                                <b><a href="{{route('tasks-detail',['id'=>$task->id])}}" style="font-size: 19px">{{$task->name}}</a></b>
+                                <b><a href="{{route('tasks-my-response',['id'=>$task->id])}}" style="font-size: 19px">{{$task->name}}</a></b>
                             </div>
                             <div class="col-md-2" style="text-align: right; padding-left: 0px">
                                 @if($task->price!="договорная")
@@ -80,12 +80,12 @@
                             </div>
                         <div class="row" style="padding-left: 15px;padding-right: 15px">
                             <div class="col-md-3" style="">
-                                <form action="{{route('tasks-detail',['id'=>$task->id])}}" style="margin-block-end:0px;">
+                                <form action="{{route('tasks-my-response',['id'=>$task->id])}}" style="margin-block-end:0px;">
                                     <button class="btn btn-warning" style="padding: 10px 20px;     font-size: 11px;">Выбрать исполнителя</button>
                                 </form>
                             </div>
                             <div class="col-md-7" style="">
-                                <form action="{{route('tasks-detail',['id'=>$task->id])}}" style="margin-block-end:0px">
+                                <form action="{{route('tasks-my-review',['id'=>$task->id])}}" style="margin-block-end:0px">
                                     <button class="btn btn-danger" style="padding: 10px 20px;     font-size: 11px;">Завершить</button>
                                 </form>
                             </div>
