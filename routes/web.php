@@ -51,10 +51,18 @@ Route::get('/createTask', 'tasksController@indexAdd')->name('add-task-get');
 Route::post('/createTask', 'tasksController@add')->name('add-task-post');
 
 
+Route::get('/support', 'supportController@index')->name('support');
+Route::post('/support', 'supportController@post')->name('support-post');
+Route::get('/admin', 'adminController@index')->name('admin');
+
 
 
 
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
     Route::get('/', 'AdminController@welcome');
-    Route::get('/manage', ['middleware' => ['permission:manage-admins'], 'uses' => 'AdminController@manageAdmins']);
+    Route::get('/admin', ['middleware' => ['permission:manage-admins'], 'uses' => 'AdminController@manageAdmins']);
+});
+Route::group(['prefix' => 'manage', 'middleware' => ['role:manage']], function() {
+    Route::get('/', 'AdminController@welcome');
+    Route::get('/admin', ['middleware' => ['permission:manage-admins'], 'uses' => 'AdminController@manageAdmins']);
 });

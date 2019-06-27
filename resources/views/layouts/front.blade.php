@@ -48,8 +48,7 @@
                                                 <hr>
                                                 <a class="dropdown-item" href="{{route('users-personal-index')}}">Редактировать</a>
                                                 <a class="dropdown-item" href="{{route('tasks-my')}}">Мои заявки</a>
-                                                <a class="dropdown-item" href="#">Настройки</a>
-                                                <a class="dropdown-item" href="#">Помощь</a>
+                                                <a class="dropdown-item" href="{{route('support')}}">Помощь</a>
                                                 <hr>
                                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Выйти') }}</a>
                                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
