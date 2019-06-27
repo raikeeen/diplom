@@ -43,7 +43,7 @@
 
 
                     <div class="userForm row" style="padding: 25px">
-                        <img class="avatario" src="{{url('storage/'.Auth::user()->avatar)}}" style="width: 50px; height: 50px; border: 0px;">
+                        <img class="avatario" src="{{url('storage/'.$value->avatar)}}" style="width: 50px; height: 50px; border: 0px;">
                         <div class="col-md-10" style="font-size: 19px;">
                             <a href="{{ url('/users').'/'.$value->id}}">{{$value->name}}</a><br>
                             <div style="font-size: 15px;word-wrap: break-word;">

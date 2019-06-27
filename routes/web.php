@@ -19,6 +19,8 @@ Route::get('/news/{id}', 'newsController@detail')->name('news-detail');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/tasks', 'tasksController@index')->name('tasks');
+Route::post('/tasks', 'tasksController@indexSelect')->name('tasks-select');
+
 Route::get('/users/{id}', 'usersController@index')->name('users');
 Route::get('/personal', 'usersController@personalIndex')->name('users-personal-index');
 Route::post('/personal', 'usersController@personalEdit')->name('users-personal-edit');

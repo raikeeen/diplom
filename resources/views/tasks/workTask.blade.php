@@ -60,11 +60,11 @@
                         @foreach($taskWork as $task)
                             <div class="row" style="padding-bottom: 25px;padding-left: 15px;padding-right: 15px">
                                 <div class="col-md-10 taskTitle">
-                                    <b><a href="{{route('tasks-detail',['id'=>$task->id])}}">{{$task->name}}</a></b>
+                                    <b><a href="{{route('tasks-my-response',['id'=>$task->id])}}">{{$task->name}}</a></b>
                                 </div>
                                 <div class="col-md-2" style="text-align: right; padding-left: 0px">
                                     @if($task->price!="договорная")
-                                        <img src="http://localhost/diplom/public/storage/money.png" style="float: left;" width="40" height="30">
+                                        <img src="{{url('storage/uploads/money.png')}}" style="float: left;" width="40" height="30">
                                         <div style="color: #4abfb4; font-weight: 700;">{{$task->price}}руб</div>
                                     @else
                                         <div class="col-md-2" style="text-align: right;">
@@ -99,7 +99,7 @@
                                     Завершенные заказы
                                 </div>
                                 <div class="value" style="    width: 40.6%;">
-                                    <a href="123">9</a>
+                                    <a >{{!is_null($taskClose)? count($taskClose) : 0}}</a>
                                 </div>
                             </div>
                             <div class="row">
@@ -107,7 +107,7 @@
                                     В поиске исполнителя
                                 </div>
                                 <div class="value" style="width: 39.2%;">
-                                    <a href="123">1</a>
+                                    <a >{{!is_null($tasks)? count($tasks) : 0}}</a>
                                 </div>
                             </div>
                             <div class="row">
@@ -123,9 +123,11 @@
                                     Отзывы исполнителей
                                 </div>
                                 <div class="value" style="width: 38.5%;">
-                                    <a href="123">+9</a>
-                                    /
-                                    <a href="123">-0</a>
+
+                                    <a href="{{ url('/users').'/'.$users->id}}">
+                                        {{$count}}
+                                    </a>
+
                                 </div>
                             </div>
                             <div class="row">
@@ -146,12 +148,20 @@
                             </div>
                             <hr>
                             <div class="title">Верификация</div>
-                            <p class="rightTextListSmall" style="white-space: pre-wrap;">Пользователь верифицирован по номеру телефона</p>
+                            @if(!is_null($users->email_verified_at))
+                                <p class="rightTextListSmall" style="white-space: pre-wrap;">Пользователь верифицирован по
+                                    email</p>
+                            @else
+                                <p class="rightTextListSmall" style="white-space: pre-wrap;">Пользователь не прошел верификацию</p>
+                            @endif
                             <hr>
                             <div class="title">Контакты</div>
-                            <p class="rightTextListSmall" style="white-space: pre-wrap;">Этот пользователь не указал никаких контактов.</p>
-
-                        </div>
+                            @if(!is_null($users->contact))
+                                <p class="rightTextListSmall" style="white-space: pre-wrap;">{{$users->contact}}</p>
+                            @else
+                                <p class="rightTextListSmall" style="white-space: pre-wrap;">Этот пользователь не указал
+                                    никаких контактов.</p>
+                            @endif
                         <hr>
                     </div>
 

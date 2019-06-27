@@ -24,7 +24,37 @@ class tasksController extends Controller
             'towns' => $towns
             ]);
     }
+    public function indexSelect(Request $request){
+        $towns=towns::orderBy('id','DESC')->get();
+        $tasks=tasks::where('idTowns',$request->town)->get();
+
+        return view('tasks.tasks', [
+            'tasks' => $tasks,
+            'towns' => $towns
+        ]);
+    }
     public function detail(Request $request){
+        $userId = Auth::id();
+        $usersss = user::where('id', $userId)->first();
+        $tasks = $usersss->Tasks;
+
+        $taskWork = collect([]);
+        $taskClose = collect([]);
+        $count= 0;
+        $reviews = reviews::all();
+        foreach ($reviews as $review)
+            if($review->idUser == $usersss->id)
+                $count++;
+
+        foreach ($tasks as $task){
+            if($task->fulfilment == 'work'){
+                $taskWork->push($task);
+            }
+            if($task->fulfilment == 'close'){
+                $taskClose->push($task);
+            }
+        }
+
         $userId = Auth::id();
         $tasks = tasks::where('id', $request->id)->first();
 
@@ -41,7 +71,11 @@ class tasksController extends Controller
         return view('tasks.detail', [
             'tasks'       => $tasks,
             'usersOtklik' => $usersOtklik,
-            'check'       => $check
+            'check'       => $check,
+            'taskWork'   => $taskWork,
+            'taskClose'  => $taskClose,
+            'taskss'      => $usersss->Tasks,
+            'count'      => $count,
             ]);
     }
     public function add(Request $request){
@@ -323,6 +357,12 @@ class tasksController extends Controller
 
         $taskWork = collect([]);
         $taskClose = collect([]);
+        $count= 0;
+        $reviews = reviews::all();
+        foreach ($reviews as $review)
+            if($review->idUser == $users->id)
+                $count++;
+
 
 
         foreach ($tasks as $task){
@@ -338,7 +378,8 @@ class tasksController extends Controller
             'users'      => $users,
             'taskWork'   => $taskWork,
             'taskClose'  => $taskClose,
-            'tasks'      => $users->Tasks
+            'tasks'      => $users->Tasks,
+            'count'      => $count,
         ]);
     }
     public function myWork(){
@@ -349,7 +390,11 @@ class tasksController extends Controller
 
         $taskWork = collect([]);
         $taskClose = collect([]);
-
+        $count= 0;
+        $reviews = reviews::all();
+        foreach ($reviews as $review)
+            if($review->idUser == $users->id)
+                $count++;
 
         foreach ($tasks as $task){
             if($task->fulfilment == 'work'){
@@ -364,7 +409,8 @@ class tasksController extends Controller
             'users'      => $users,
             'taskWork'   => $taskWork,
             'taskClose'  => $taskClose,
-            'tasks'      => $users->Tasks
+            'tasks'      => $users->Tasks,
+            'count'      => $count,
         ]);
     }
     public function myClose(){
@@ -375,7 +421,11 @@ class tasksController extends Controller
 
         $taskWork = collect([]);
         $taskClose = collect([]);
-
+        $count= 0;
+        $reviews = reviews::all();
+        foreach ($reviews as $review)
+            if($review->idUser == $users->id)
+                $count++;
 
         foreach ($tasks as $task){
             if($task->fulfilment == 'work'){
@@ -390,7 +440,8 @@ class tasksController extends Controller
             'users'      => $users,
             'taskWork'   => $taskWork,
             'taskClose'  => $taskClose,
-            'tasks'      => $users->Tasks
+            'tasks'      => $users->Tasks,
+            'count'      => $count,
         ]);
     }
 }

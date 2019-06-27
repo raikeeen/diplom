@@ -61,6 +61,7 @@
                 <div class="userBlockInfoTitle">
                     Отзывы
                 </div>
+                @if(is_null($reviews))
                 <div class="emptyBlockHolder">
                     <div class="emptyBlockRecommendations">
                         <div class="emptyBlockTitle">
@@ -71,6 +72,23 @@
                         </div>
                     </div>
                 </div>
+                    @else
+                    @foreach($reviews as $review)
+                        <div class="userForm row" style="padding: 25px">
+                            <img class="avatario" src="{{url('storage/'.$needUser->avatar)}}" style="width: 50px; height: 50px; border: 0px;">
+                            <div class="col-md-10" style="font-size: 19px;">
+                                <a href="{{ url('/users').'/'.$needUser->id}}">{{$needUser->name}}</a><br>
+                                <div style="font-size: 15px;word-wrap: break-word;">
+                                    {{$review->descriptions}}
+                                </div>
+                                <div style="margin-bottom: 30px">
+                                </div>
+                                <hr>
+                            </div>
+                        </div>
+                        @endforeach
+                @endif
+
                 <div>
                 </div>
             </div>
@@ -87,7 +105,7 @@
                                     Завершенные заказы
                                 </div>
                                 <div class="value" style="    width: 40.6%;">
-                                    <a href="123">9</a>
+                                    <a >{{!is_null($taskClose)? count($taskClose) : 0}}</a>
                                 </div>
                             </div>
                             <div class="row">
@@ -95,7 +113,7 @@
                                     В поиске исполнителя
                                 </div>
                                 <div class="value" style="width: 39.2%;">
-                                    <a href="123">1</a>
+                                    <a >{{!is_null($tasks)? count($tasks) : 0}}</a>
                                 </div>
                             </div>
                             <div class="row">
@@ -111,9 +129,11 @@
                                     Отзывы исполнителей
                                 </div>
                                 <div class="value" style="width: 38.5%;">
-                                    <a href="123">+9</a>
-                                    /
-                                    <a href="123">-0</a>
+
+                                    <a href="{{ url('/users').'/'.$users->id}}">
+                                        {{$count}}
+                                    </a>
+
                                 </div>
                             </div>
                             <div class="row">
@@ -135,8 +155,8 @@
                             <hr>
                             <div class="title">Верификация</div>
                             @if(!is_null($users->email_verified_at))
-                            <p class="rightTextListSmall" style="white-space: pre-wrap;">Пользователь верифицирован по
-                                email</p>
+                                <p class="rightTextListSmall" style="white-space: pre-wrap;">Пользователь верифицирован по
+                                    email</p>
                             @else
                                 <p class="rightTextListSmall" style="white-space: pre-wrap;">Пользователь не прошел верификацию</p>
                             @endif

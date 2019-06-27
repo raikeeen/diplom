@@ -7,17 +7,59 @@ use App\User;
 use App\Models\RoleUser;
 use App\Models\Role;
 use App\Models\Tasks;
+use App\Models\Reviews;
 use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Support\Facades\Auth;
+use PhpParser\Node\Stmt\Foreach_;
 
 class usersController extends Controller
 {
     public function index(Request $request)
     {
+        $userId = Auth::id();
+        $usersss = user::where('id', $userId)->first();
+        $tasks = $usersss->Tasks;
+
+        $taskWork = collect([]);
+        $taskClose = collect([]);
+        $count= 0;
+        $reviews = reviews::all();
+        foreach ($reviews as $review)
+            if($review->idUser == $usersss->id)
+                $count++;
+
+        foreach ($tasks as $task){
+            if($task->fulfilment == 'work'){
+                $taskWork->push($task);
+            }
+            if($task->fulfilment == 'close'){
+                $taskClose->push($task);
+            }
+        }
+
+
         $users = user::where('id', $request->id)->first();
+        $userss = user::all();
+        $reviews = Reviews::where('idUser', $request->id)->get();
+        $needUser = [];
+
+        $userCreator = user::where('id', $request->id)->first();
+        foreach ($userss as $user)
+        foreach ($reviews as $review)
+            if($review->idUserReviewСreator == $user->id)
+                $needUser = $user;
+
+
+
         return view('users.detail',[
-            'users' => $users
+            'users' => $users,
+            'reviews' => $reviews,
+            'needUser' => $needUser,
+            'taskWork'   => $taskWork,
+            'taskClose'  => $taskClose,
+            'tasks'      => $users->Tasks,
+            'count'      => $count,
         ]);
     }
     public function front()
@@ -35,10 +77,35 @@ class usersController extends Controller
     public function personalIndex()
     {
         $userId = Auth::id();
+        $usersss = user::where('id', $userId)->first();
+        $tasks = $usersss->Tasks;
+
+        $taskWork = collect([]);
+        $taskClose = collect([]);
+        $count= 0;
+        $reviews = reviews::all();
+        foreach ($reviews as $review)
+            if($review->idUser == $usersss->id)
+                $count++;
+
+        foreach ($tasks as $task){
+            if($task->fulfilment == 'work'){
+                $taskWork->push($task);
+            }
+            if($task->fulfilment == 'close'){
+                $taskClose->push($task);
+            }
+        }
+
+        $userId = Auth::id();
         $users = user::where('id', $userId)->first();
 
         return view('users.personal',[
-            'users' => $users
+            'users' => $users,
+            'taskWork'   => $taskWork,
+            'taskClose'  => $taskClose,
+            'tasks'      => $users->Tasks,
+            'count'      => $count,
         ]);
     }
     private function saveImage($img){

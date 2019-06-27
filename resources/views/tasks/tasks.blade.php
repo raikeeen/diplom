@@ -29,10 +29,6 @@
                     Заказы ({{count($tasks)}})
                     </div>
                     <hr>
-                    <div class="md-form mt-0">
-                        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-                    </div>
-                    <hr>
                 </header>
                 @foreach($tasks as $task)
                     <div class="row" style="padding-bottom: 25px;">
@@ -63,36 +59,13 @@
             </div>
             <div class="col-md-3 smallList">
                     <div class="layoutTitle" style="padding: 12px 15px;border-bottom: 1px solid #eceeef;">
-                        Фильтры
+                        Сортировка по городам
                     </div>
 
-                <ul class="categoryGroup" style="margin-bottom: 0px; padding-bottom: 0px">
-                    <li class="categoryGroupFolder">
-                        <div class="categoryGroupName checkbox_flat">
-                            <div class="checkbox  checkbox-xs">
-                                <label>
-                                    <input type="checkbox" value="">
-                                    <i class="fa fa-lg icon-checkbox"></i>
-                                    <span class="linkDotted js-toggle">От имеющих отзывы</span>
-                                </label>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="categoryGroupFolder">
-                        <div class="categoryGroupName checkbox_flat">
-                            <div class="checkbox  checkbox-xs">
-                                <label>
-                                    <input type="checkbox" value="">
-                                    <i class="fa fa-lg icon-checkbox"></i>
-                                    <span class="linkDotted js-toggle">С указанной стоимостью</span>
-                                </label>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <div class="layoutTitle" style="padding: 12px 15px;border-top: 1px solid #eceeef;border-bottom: 1px solid #eceeef;">
-                    По городам
-                </div>
+
+
+                <form  method="post" action="{{route('tasks-select')}}" style="margin-block-end:0px;">
+                {{csrf_field()}}
                 <div style="padding: 15px">
                 <select class="form-control" id="exampleFormControlSelect1" name="town">
                     <option></option>
@@ -100,6 +73,8 @@
                         <option value="{{$town->id}}">{{$town->name}}</option>
                     @endforeach
                 </select>
+                    <button class="btn btn-warning" style="margin-top: 15px;padding: 10px 20px;     font-size: 11px;">Поиск</button>
+                    </form>
                 </div>
             </div>
         </div>

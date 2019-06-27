@@ -44,7 +44,7 @@
                     @foreach($users as $user)
                         @if($TaskUser->idUser == $user->id)
                 <div class="userForm row" style="padding: 25px">
-                    <img class="avatario" src="{{url('storage/'.Auth::user()->avatar)}}" style="width: 50px; height: 50px; border: 0px;">
+                    <img class="avatario" src="{{url('storage/'.$user->avatar)}}" style="width: 50px; height: 50px; border: 0px;">
                     <div class="col-md-10" style="font-size: 19px;">
                         <a href="{{ url('/users').'/'.$user->id}}">{{$user->name}}</a><br>
                         <div style="font-size: 15px;word-wrap: break-word;">

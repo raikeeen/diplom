@@ -105,7 +105,7 @@
                                     Завершенные заказы
                                 </div>
                                 <div class="value" style="    width: 40.6%;">
-                                    <a href="123">9</a>
+                                    <a >2</a>
                                 </div>
                             </div>
                             <div class="row">
@@ -113,7 +113,7 @@
                                     В поиске исполнителя
                                 </div>
                                 <div class="value" style="width: 39.2%;">
-                                    <a href="123">1</a>
+                                    <a >1</a>
                                 </div>
                             </div>
                             <div class="row">
@@ -129,9 +129,11 @@
                                     Отзывы исполнителей
                                 </div>
                                 <div class="value" style="width: 38.5%;">
-                                    <a href="123">+9</a>
-                                    /
-                                    <a href="123">-0</a>
+
+                                    <a href="">
+                                        {{$count}}
+                                    </a>
+
                                 </div>
                             </div>
                             <div class="row">
@@ -152,11 +154,20 @@
                             </div>
                             <hr>
                             <div class="title">Верификация</div>
-                            <p class="rightTextListSmall" style="white-space: pre-wrap;">Пользователь верифицирован по номеру телефона</p>
+                            @if(!is_null(13))
+                                <p class="rightTextListSmall" style="white-space: pre-wrap;">Пользователь верифицирован по
+                                    email</p>
+                            @else
+                                <p class="rightTextListSmall" style="white-space: pre-wrap;">Пользователь не прошел верификацию</p>
+                            @endif
                             <hr>
                             <div class="title">Контакты</div>
-                            <p class="rightTextListSmall" style="white-space: pre-wrap;">Этот пользователь не указал никаких контактов.</p>
-
+                            @if(!is_null(23))
+                                <p class="rightTextListSmall" style="white-space: pre-wrap;"></p>
+                            @else
+                                <p class="rightTextListSmall" style="white-space: pre-wrap;">Этот пользователь не указал
+                                    никаких контактов.</p>
+                            @endif
                         </div>
                         <hr>
                     </div>
