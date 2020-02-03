@@ -22,7 +22,7 @@
 
 ### Склонировать репозиторий
 ```
-git clone https://github.com/raikeeen/diplom
+git clone https://github.com/raikeeen/Anonim
 ```
 ### Поднять локальный сервер на Vagrant
 ```
